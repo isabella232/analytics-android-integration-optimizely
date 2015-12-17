@@ -6,6 +6,15 @@ analytics-android-integration-optimizely
 
 Optimizely integration for [analytics-android](https://github.com/segmentio/analytics-android).
 
+Since Optimizely needs to be initialized as early as possible during your application lifecycle, this integration is not initialized directly by Segment after fetching settings. Instead, we initialize Optimizely when you create the factory.
+
+```
+Analytics analytics = new Analytics.Builder(context, writeKey)
+  .use(OptimizelyIntegration.factory(application, optimizelyToken))
+  ...
+  .build();
+```
+
 ## License
 
 ```

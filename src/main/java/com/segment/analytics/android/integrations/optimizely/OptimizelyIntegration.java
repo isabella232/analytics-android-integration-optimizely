@@ -31,7 +31,7 @@ public class OptimizelyIntegration extends Integration<Void> implements Optimize
 
   // Optimizely must be initialized immediately on launch. So we require the token when creating the
   // factory, and initialize it in this method.
-  public static Factory factory(final Application application, String token) {
+  public static Factory createFactory(final Application application, String token) {
     Optimizely.startOptimizelyWithAPIToken(token, application);
     return new Factory() {
       @Override public Integration<?> create(ValueMap settings, Analytics analytics) {
