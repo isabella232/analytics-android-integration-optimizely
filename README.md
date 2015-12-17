@@ -15,6 +15,8 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
   .build();
 ```
 
+Note the different syntax used here - instead of using a global singleton instance, we use a method that creates the factory on demand.
+
 ## License
 
 ```
