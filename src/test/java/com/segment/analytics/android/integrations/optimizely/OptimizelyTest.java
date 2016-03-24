@@ -77,7 +77,7 @@ public class OptimizelyTest {
     data.variationId = "qux";
     data.variationName = "qaz";
 
-    integration.onOptimizelyExperimentViewed(data);
+    integration.onOptimizelyExperimentVisited(data);
 
     verify(analytics).track("Experiment Viewed", new Properties() //
         .putValue("experimentId", "bar")

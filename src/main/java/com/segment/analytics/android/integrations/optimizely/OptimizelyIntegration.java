@@ -90,16 +90,16 @@ public class OptimizelyIntegration extends Integration<Void> implements Optimize
 
   @Override
   public void onOptimizelyExperimentVisited(OptimizelyExperimentData optimizelyExperimentData) {
-    // Ignore.
+    analytics.track("Experiment Viewed", new Properties() //
+            .putValue("experimentId", optimizelyExperimentData.experimentId)
+            .putValue("experimentName", optimizelyExperimentData.experimentName)
+            .putValue("variationId", optimizelyExperimentData.variationId)
+            .putValue("variationName", optimizelyExperimentData.variationName));
   }
 
   @Override
   public void onOptimizelyExperimentViewed(OptimizelyExperimentData optimizelyExperimentData) {
-    analytics.track("Experiment Viewed", new Properties() //
-        .putValue("experimentId", optimizelyExperimentData.experimentId)
-        .putValue("experimentName", optimizelyExperimentData.experimentName)
-        .putValue("variationId", optimizelyExperimentData.variationId)
-        .putValue("variationName", optimizelyExperimentData.variationName));
+    // Deprecated
   }
 
   @Override public void onOptimizelyEditorEnabled() {
