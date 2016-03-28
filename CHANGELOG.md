@@ -1,5 +1,5 @@
 
-Version 1.0.1 (28th March, 2016i)
+Version 1.0.1 (28th March, 2016)
 ===================================
 *(Supports analytics-android 4.0.2+ and Optimizely 1.3.2-SNAPSHOT)*
 
