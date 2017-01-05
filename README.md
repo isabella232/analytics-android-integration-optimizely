@@ -6,6 +6,16 @@ analytics-android-integration-optimizely
 
 Optimizely integration for [analytics-android](https://github.com/segmentio/analytics-android).
 
+## Installation
+
+To install the Segment-Optimizely integration, simply add this line to your gradle file:
+
+```
+compile 'com.segment.analytics.android.integrations:optimizely:+'
+```
+
+## Usage
+
 Since Optimizely needs to be initialized as early as possible during your application lifecycle, this integration is not initialized directly by Segment after fetching settings. Instead, we initialize Optimizely when you create the factory.
 
 ```
@@ -16,6 +26,8 @@ Analytics analytics = new Analytics.Builder(context, writeKey)
 ```
 
 Note the different syntax used here - instead of using a global singleton instance, we use a method that creates the factory on demand.
+
+Please see [our documentation](https://segment.com/docs/integrations/optimizely/) for more information.
 
 ## License
 
